@@ -2,6 +2,7 @@ package bench;
 
 public class DemoBenchmark implements IBenchmark {
     private int n;
+    private Boolean running;
 
     public void initialize(Object...init_params) {
         if(init_params.length == 1) {
@@ -10,7 +11,9 @@ public class DemoBenchmark implements IBenchmark {
     }
 
     @Override
-    public void initialize() { }
+    public void initialize() {
+        running = true;
+    }
 
     public void run(Object...run_params) { }
 
@@ -26,5 +29,7 @@ public class DemoBenchmark implements IBenchmark {
     public void clean() { }
 
     @Override
-    public void cancel() { }
+    public void cancel() {
+        running = false;
+    }
 }
