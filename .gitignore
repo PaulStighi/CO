@@ -6,3 +6,6 @@ output.txt
 
 # IDE related folder
 .idea/
+
+# Garbage
+CO-lab2.iml
