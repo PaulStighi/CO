@@ -33,6 +33,11 @@ public class DummyBenchmark implements IBenchmark {
 	public void run(Object...run_params) { }
 
 	@Override
+	public void warmUp() {
+
+	}
+
+	@Override
 	public void run() {
 		Collections.sort(arr);
 

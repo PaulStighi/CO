@@ -18,6 +18,11 @@ public class DemoBenchmark implements IBenchmark {
     public void run(Object...run_params) { }
 
     @Override
+    public void warmUp() {
+
+    }
+
+    @Override
     public void run() {
         try {
             Thread.sleep(n);
