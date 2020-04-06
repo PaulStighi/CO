@@ -3,10 +3,13 @@ package bench;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class DummyBenchmark implements IBenchmark{
-	private ArrayList<Integer> arr = new ArrayList<Integer>();
+public class DummyBenchmark implements IBenchmark {
+	private ArrayList<Integer> arr;
 	
-	
+	public DummyBenchmark() {
+		arr = new ArrayList<Integer>();
+	}
+
 	/**
 	 * Setting up the array for the benchmark
 	 */
@@ -17,28 +20,33 @@ public class DummyBenchmark implements IBenchmark{
 			}
 		}
 	}
-	
-	/**
-	 * Running the benchmark, using the given params
-	 */
-	public void run(Object...run_params) {
-		Collections.sort(this.arr);
-	}
-	
-	public void clean() {
-		
-	}
 
 	@Override
 	public void initialize() {
 		// TODO Auto-generated method stub
-		
+
 	}
+	
+	/**
+	 * Running the benchmark, using the given params
+	 */
+	public void run(Object...run_params) { }
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
-		
+		Collections.sort(arr);
+
+		/*for (int i = 0; i < arr.size(); ++i) {
+			for (int j = i + 1; j < arr.size(); ++j) {
+				if (arr.get(i) > arr.get(j)) {
+					Collections.swap(arr, i, j);
+				}
+			}
+		}*/
+	}
+	
+	public void clean() {
+		arr.clear();
 	}
 
 	@Override

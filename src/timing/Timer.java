@@ -1,7 +1,7 @@
 package timing;
 
 public class Timer implements ITimer {
-	long start_time, end_time, elapsed, total;
+	long start_time, end_time, elapsed = 0, total = 0;
 
 	/**
 	 * The first time for the timer is saved and the elapsed and total time is initialized 
@@ -39,9 +39,11 @@ public class Timer implements ITimer {
 	 */
 	@Override
 	public long stop() {
-		end_time = System.nanoTime();
-		elapsed = end_time - start_time;
-		total += elapsed;
+		if(start_time > end_time) {
+			end_time = System.nanoTime();
+			elapsed = end_time - start_time;
+			total += elapsed;
+		}
 		return total;
 	}
 

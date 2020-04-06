@@ -8,14 +8,16 @@ public class ConsoleLogger implements ILogger {
 	@Override
 	public void write(Object... args) {
 		for(int i = 0 ; i < args.length ; ++i) {
-			System.out.print(args[i] + " ");
+			System.out.print(args[i].toString() + " ");
 		}
+		System.out.print("\n");
 	}
 
 	@Override
-	public void close() {
-		// TODO Auto-generated method stub
-		
+	public void writeTime(long value, TimeUnit timeUnit) {
+		System.out.println(value / timeUnit.value + " " + timeUnit.key);
 	}
 
+	@Override
+	public void close() { }
 }

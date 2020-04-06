@@ -3,7 +3,17 @@ package logging;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class FileLogger implements ILogger{
+public class FileLogger implements ILogger {
+	private FileWriter fout;
+
+	public FileLogger() {
+		try {
+			fout = new FileWriter("output.txt");
+		} catch (IOException e) {
+			System.out.println("An error occurred.");
+			e.printStackTrace();
+		}
+	}
 
 	/**
 	 * Printing the given arguments in a file
@@ -11,14 +21,10 @@ public class FileLogger implements ILogger{
 	@Override
 	public void write(Object... args) {
 		try {
-			FileWriter fout = new FileWriter("output.txt");
-			
 			for(int i = 0 ; i < args.length ; ++i) {
 				fout.write(args[i] + " ");
 			}
-			
-			fout.close();
-			
+			fout.write("\n");
 			System.out.println("Successfully wrote to the file.");
 	    } catch (IOException e) {
 	      System.out.println("An error occurred.");
@@ -27,9 +33,23 @@ public class FileLogger implements ILogger{
 	}
 
 	@Override
+	public void writeTime(long value, TimeUnit timeUnit) {
+		try {
+			fout.write(value / timeUnit.value + " " + timeUnit.key);
+		} catch (IOException e) {
+			System.out.println("An error occurred.");
+			e.printStackTrace();
+		}
+	}
+
+	@Override
 	public void close() {
-		// TODO Auto-generated method stub
-		
+		try {
+			fout.close();
+		} catch (IOException e) {
+			System.out.println("An error occurred.");
+			e.printStackTrace();
+		}
 	}
 
 }
