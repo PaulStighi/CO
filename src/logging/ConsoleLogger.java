@@ -14,8 +14,8 @@ public class ConsoleLogger implements ILogger {
 	}
 
 	@Override
-	public void writeTime(long value, TimeUnit timeUnit) {
-		System.out.println(value / timeUnit.value + " " + timeUnit.key);
+	public String writeTime(long value, TimeUnit timeUnit) {
+		return(value / timeUnit.value + " " + timeUnit.key);
 	}
 
 	@Override

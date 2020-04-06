@@ -33,13 +33,8 @@ public class FileLogger implements ILogger {
 	}
 
 	@Override
-	public void writeTime(long value, TimeUnit timeUnit) {
-		try {
-			fout.write(value / timeUnit.value + " " + timeUnit.key + "\n");
-		} catch (IOException e) {
-			System.out.println("An error occurred.");
-			e.printStackTrace();
-		}
+	public String writeTime(long value, TimeUnit timeUnit) {
+		return(value / timeUnit.value + " " + timeUnit.key);
 	}
 
 	@Override
