@@ -3,6 +3,7 @@ package testbench;
 import bench.DemoBenchmark;
 import bench.IBenchmark;
 import logging.ConsoleLogger;
+import logging.FileLogger;
 import logging.ILogger;
 import logging.TimeUnit;
 import timing.ITimer;
@@ -11,7 +12,7 @@ import timing.Timer;
 public class TestDemoBench {
     public static void main(String[] args) {
         ITimer timer = new Timer();
-        ILogger log = new ConsoleLogger();
+        ILogger log = new FileLogger();
         IBenchmark bench = new DemoBenchmark();
         int N = 100;
 

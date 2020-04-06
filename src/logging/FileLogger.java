@@ -35,7 +35,7 @@ public class FileLogger implements ILogger {
 	@Override
 	public void writeTime(long value, TimeUnit timeUnit) {
 		try {
-			fout.write(value / timeUnit.value + " " + timeUnit.key);
+			fout.write(value / timeUnit.value + " " + timeUnit.key + "\n");
 		} catch (IOException e) {
 			System.out.println("An error occurred.");
 			e.printStackTrace();
