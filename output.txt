@@ -1,1 +1,1 @@
-Finished in 5500 ns 
+Finished in 17300 ns 

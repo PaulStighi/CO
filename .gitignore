@@ -1,2 +1,8 @@
 # Compiled class file
 *.class
+
+# Output file, changing with every run
+output.txt
+
+# IDE related folder
+.idea/
