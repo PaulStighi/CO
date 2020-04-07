@@ -6,4 +6,5 @@ public interface IBenchmark {
 	void warmUp();
 	void clean();
 	void cancel();
+	String getResult();
 }

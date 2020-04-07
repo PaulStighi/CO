@@ -59,4 +59,9 @@ public class DummyBenchmark implements IBenchmark {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public String getResult() {
+		return null;
+	}
 }
